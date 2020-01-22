@@ -82,7 +82,7 @@ render() {
             </div>
             <div className="under">
                 <div className="user-container">
-                    <img src={this.state.imageUrl}} alt="user"/>
+                    <img src={this.state.imageUrl} alt="user"/>
                     <select defaultValue="0">
                         {
                             this.state.users.map( user => {
