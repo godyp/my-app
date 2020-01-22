@@ -43,9 +43,9 @@ handleTextChange(event){
 
 handleUserChange(event){
     this.setState({
-        selectedValue: e.target.value,
-        crapPoint: this.state.users[e.target.value].give,
-        getPoint: this.state.users[e.target.value].get
+        selectedValue: event.target.value,
+        crapPoint: this.state.users[event.target.value].give,
+        getPoint: this.state.users[event.target.value].get
     })
 }
 
