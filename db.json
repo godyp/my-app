@@ -16,8 +16,8 @@
         "id": 2,
         "name": "珠子",
         "image": "woman01.png",
-        "give": 100,
-        "get": 0
+        "give": 80,
+        "get": 60
       }
     ]
   }

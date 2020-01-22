@@ -10,6 +10,7 @@ constructor(){
     selectedValue: 0,
     crapPoint: 0,
     getPoint: 0,
+    imageUrl: `${process.env.PUBLIC_URL}/images/unknown.png}`,
     users:[{
         "id": 0,
         "name": "unknown",
@@ -45,7 +46,8 @@ handleUserChange(event){
     this.setState({
         selectedValue: event.target.value,
         crapPoint: this.state.users[event.target.value].give,
-        getPoint: this.state.users[event.target.value].get
+        getPoint: this.state.users[event.target.value].get,
+        imageUrl: `${process.env.PUBLIC_URL}/images/${this.state.users[event.target.value].image}`
     })
 }
 
@@ -62,7 +64,7 @@ render() {
         <div className="top">
             <div className="over">
                 <div className="user-container">
-                    <img src={`${process.env.PUBLIC_URL}/images/man01.png`} alt="user"/>
+                    <img src={this.state.imageUrl} alt="user"/>
                     <select
                     vaue={this.state.selectedValue}
                     onChange={(event)=>{this.handleUserChange(event)}}
@@ -80,7 +82,7 @@ render() {
             </div>
             <div className="under">
                 <div className="user-container">
-                    <img src={`${process.env.PUBLIC_URL}/images/man01.png`} alt="user"/>
+                    <img src={this.state.imageUrl}} alt="user"/>
                     <select defaultValue="0">
                         {
                             this.state.users.map( user => {
