@@ -28,7 +28,7 @@ fetchTasks(){
     fetch("http://localhost:3001/users") // データを取得しに行く
     .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
     .then( json => { // オブジェクトに変換したレスポンスを受け取り、
-    this.setState({ users: json,imageUrl: `${process.env.PUBLIC_URL}/images/unknown.png}`, }) // Stateを更新する
+    this.setState({ users: json }) // Stateを更新する
     })
 }
 
@@ -45,8 +45,7 @@ handleUserChange(event){
     this.setState({
         selectedValue: event.target.value,
         crapPoint: this.state.users[event.target.value].give,
-        getPoint: this.state.users[event.target.value].get,
-        imageUrl: `${process.env.PUBLIC_URL}/images/${this.state.users[event.target.value].image}`
+        getPoint: this.state.users[event.target.value].get
     })
 }
 
@@ -63,9 +62,9 @@ render() {
         <div className="top">
             <div className="over">
                 <div className="user-container">
-                    <img src={this.state.imageUrl} alt="user"/>
+                    <img src={`${process.env.PUBLIC_URL}/images/unknown.png`} alt="user"/>
                     <select
-                    vaue={this.state.selectedValue}
+                    value={this.state.selectedValue}
                     onChange={(event)=>{this.handleUserChange(event)}}
                     >
                             {
@@ -81,7 +80,7 @@ render() {
             </div>
             <div className="under">
                 <div className="user-container">
-                    <img src={this.state.imageUrl} alt="user"/>
+                    <img src={`${process.env.PUBLIC_URL}/images/unknown.png`} alt="user"/>
                     <select defaultValue="0">
                         {
                             this.state.users.map( user => {
