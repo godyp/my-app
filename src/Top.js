@@ -56,13 +56,14 @@ render() {
     }else{
     button = <div className="no-btn">投稿</div>;
     }
+    let image = <img src={`${process.env.PUBLIC_URL}/images/unknown.png`} alt="user"/>
 
     return (
     <div className="page-container">
         <div className="top">
             <div className="over">
                 <div className="user-container">
-                    <img src={`${process.env.PUBLIC_URL}/images/unknown.png`} alt="user"/>
+                    {image}
                     <select
                     value={this.state.selectedValue}
                     onChange={(event)=>{this.handleUserChange(event)}}
@@ -80,7 +81,7 @@ render() {
             </div>
             <div className="under">
                 <div className="user-container">
-                    <img src={`${process.env.PUBLIC_URL}/images/unknown.png`} alt="user"/>
+                    {image}
                     <select defaultValue="0">
                         {
                             this.state.users.map( user => {
