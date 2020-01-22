@@ -10,7 +10,6 @@ constructor(){
     selectedValue: 0,
     crapPoint: 0,
     getPoint: 0,
-    imageUrl: `${process.env.PUBLIC_URL}/images/unknown.png}`,
     users:[{
         "id": 0,
         "name": "unknown",
@@ -29,7 +28,7 @@ fetchTasks(){
     fetch("http://localhost:3001/users") // データを取得しに行く
     .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
     .then( json => { // オブジェクトに変換したレスポンスを受け取り、
-    this.setState({ users: json }) // Stateを更新する
+    this.setState({ users: json,imageUrl: `${process.env.PUBLIC_URL}/images/unknown.png}`, }) // Stateを更新する
     })
 }
 

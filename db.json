@@ -2,7 +2,7 @@
     "users": [
       {
         "id": 0,
-        "name": "unknown",
+        "name": "---",
         "image": "unknown.png",
         "give": 0,
         "get": 0
