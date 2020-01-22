@@ -1,0 +1,23 @@
+{
+    "users": [
+      {
+        "id": 0,
+        "name": "unknown",
+        "image": "unknown.png",
+        "give": 0,
+        "get": 0
+      }, {
+        "id": 1,
+        "name": "たかし",
+        "image": "man01.png",
+        "give": 100,
+        "get": 0
+      }, {
+        "id": 2,
+        "name": "珠子",
+        "image": "woman01.png",
+        "give": 100,
+        "get": 0
+      }
+    ]
+  }
