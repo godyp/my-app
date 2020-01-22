@@ -7,7 +7,8 @@ constructor(){
     this.state = {
     text: "",
     hasTextError: false,
-    selectedValue: 0,
+    selectedValue1: 0,
+    selectedValue2: 0,
     crapPoint: 0,
     getPoint: 0,
     users:[{
@@ -41,11 +42,16 @@ handleTextChange(event){
     });
 }
 
-handleUserChange(event){
+handleUserChange1(event){
     this.setState({
-        selectedValue: event.target.value,
+        selectedValue1: event.target.value,
         crapPoint: this.state.users[event.target.value].give,
         getPoint: this.state.users[event.target.value].get
+    })
+}
+handleUserChange2(event){
+    this.setState({
+        selectedValue2: event.target.value,
     })
 }
 
@@ -56,23 +62,22 @@ render() {
     }else{
     button = <div className="no-btn">投稿</div>;
     }
-    let image = <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.selectedValue].image}`} alt="user"/>
 
     return (
     <div className="page-container">
         <div className="top">
             <div className="over">
                 <div className="user-container">
-                    {image}
+                    <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.selectedValue1].image}`} alt="user"/>
                     <select
-                    value={this.state.selectedValue}
-                    onChange={(event)=>{this.handleUserChange(event)}}
+                    value={this.state.selectedValue1}
+                    onChange={(event)=>{this.handleUserChange1(event)}}
                     >
-                            {
-                                this.state.users.map( user => {
-                                    return <option className="user" value={ user.id }>{ user.name }</option>
-                                })
-                            }
+                        {
+                            this.state.users.map( user => {
+                                return <option className="user" value={ user.id }>{ user.name }</option>
+                            })
+                        }
                     </select>
                 </div>
                 <div className="user-info">
@@ -81,8 +86,11 @@ render() {
             </div>
             <div className="under">
                 <div className="user-container">
-                    {image}
-                    <select defaultValue="0">
+                    <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.selectedValue2].image}`} alt="user"/>
+                    <select
+                    value={this.state.selectedValue2}
+                    onChange={(event)=>{this.handleUserChange2(event)}}
+                    >
                         {
                             this.state.users.map( user => {
                                 return <option className="user" value={ user.id }>{ user.name }</option>
