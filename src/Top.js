@@ -101,9 +101,9 @@ submitTask() {
 render() {
     let button;
     if (this.state.hasTextError){
-    button = <input className="btn" type="submit" value="投稿" />;
+    button = <input className="btn" type="submit" value="投稿"  onClick={ ()=>{this.submitTask()} }/>;
     }else{
-    button = <div className="no-btn" onClick={ ()=>{this.submitTask()} }>投稿</div>;
+    button = <div className="no-btn">投稿</div>;
     }
 
     return (
