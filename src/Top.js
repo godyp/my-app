@@ -78,7 +78,7 @@ calcDate(){
 }
 
 submitTask() {
-    calcDate();
+    this.calcDate();
     fetch("http://localhost:3001/contents", {
         method: "POST",
         headers: {
