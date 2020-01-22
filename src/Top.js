@@ -56,7 +56,7 @@ render() {
     }else{
     button = <div className="no-btn">投稿</div>;
     }
-    let image = <img src={`${process.env.PUBLIC_URL}/images/unknown.png`} alt="user"/>
+    let image = <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.selectedValue].image}`} alt="user"/>
 
     return (
     <div className="page-container">
