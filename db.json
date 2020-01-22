@@ -19,5 +19,15 @@
         "give": 80,
         "get": 60
       }
+    ],
+    "contents": [
+      {
+        "id": 0,
+        "from": "",
+        "to": "",
+        "message": "",
+        "craped": "",
+        "date": ""
+      }
     ]
   }

@@ -11,6 +11,7 @@ constructor(){
     selectedValue2: 0,
     crapPoint: 0,
     getPoint: 0,
+    date: "",
     users:[{
         "id": 0,
         "name": "unknown",
@@ -55,12 +56,54 @@ handleUserChange2(event){
     })
 }
 
+calcDate(){
+	// 現在の日時
+	let d = new Date();
+
+	// 2桁のゼロ埋め
+	let fillZero = function ( number ) {
+		return (0 + number).slice(-2);
+	}
+
+	// 年月日時分秒を取得
+	let year = d.getFullYear();	// 年
+	let month = fillZero(d.getMonth() + 1); // 月
+	let date = fillZero(d.getDate()); // 日
+	let hour = fillZero(d.getHours()); // 時
+	let minute = fillZero(d.getMinutes()); // 分
+
+	// 年月日時分秒の文字列の作成(YYYYMMDDHHMMSS)
+    let str = `${year}/${month}/${date} ${hour}:${minute}`;
+    this.setState({date: str});
+}
+
+submitTask() {
+    calcDate();
+    fetch("http://localhost:3001/contents", {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            from: this.state.users[this.state.selectedValue1].id,
+            to: this.state.users[this.state.selectedValue2].id,
+            message: this.state.text,
+            craped: 0,
+            date: this.state.date
+        })
+    })
+    .then( this.fetchTasks )
+  }
+
+
+
 render() {
     let button;
     if (this.state.hasTextError){
     button = <input className="btn" type="submit" value="投稿" />;
     }else{
-    button = <div className="no-btn">投稿</div>;
+    button = <div className="no-btn" onClick={ ()=>{this.submitTask()} }>投稿</div>;
     }
 
     return (
