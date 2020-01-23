@@ -68,26 +68,23 @@ handleUserChange2(event){
 calcDate(){
 	// 現在の日時
 	let d = new Date();
-
 	// 2桁のゼロ埋め
 	let fillZero = function ( number ) {
 		return (0 + number).slice(-2);
 	}
-
-	// 年月日時分秒を取得
+	// 年月日時分を取得
 	let year = d.getFullYear();	// 年
 	let month = fillZero(d.getMonth() + 1); // 月
 	let date = fillZero(d.getDate()); // 日
 	let hour = fillZero(d.getHours()); // 時
 	let minute = fillZero(d.getMinutes()); // 分
-
 	// 年月日時分秒の文字列の作成(YYYYMMDDHHMMSS)
     let str = `${year}/${month}/${date} ${hour}:${minute}`;
     this.setState({date: str});
 }
 
 submitTask() {
-    this.calcDate();
+    this.calcDate;
     fetch("http://localhost:3001/contents", {
         method: "POST",
         headers: {
@@ -100,11 +97,6 @@ submitTask() {
             message: this.state.text,
             craped: 0,
             date: this.state.date
-            // from: "たかし",
-            // to: "珠子",
-            // body: this.state.text,
-            // craped: 0,
-            // date: "2020/01/23 13:53"
         })
     })
     .then( this.fetchContents )
