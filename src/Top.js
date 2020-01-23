@@ -21,18 +21,25 @@ constructor(){
     }]
     }
     this.submitTask = this.submitTask.bind(this)
-    this.fetchTasks = this.fetchTasks.bind(this)
+    this.fetchUsers = this.fetchUsers.bind(this)
 }
 
 componentWillMount(){
-    this.fetchTasks()
+    this.fetchUsers()
 }
 
-fetchTasks(){
+fetchUsers(){
     fetch("http://localhost:3001/users") // データを取得しに行く
     .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
     .then( json => { // オブジェクトに変換したレスポンスを受け取り、
     this.setState({ users: json }) // Stateを更新する
+    })
+}
+fetchContents(){
+    fetch("http://localhost:3001/contents") // データを取得しに行く
+    .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
+    .then( json => { // オブジェクトに変換したレスポンスを受け取り、
+    // this.setState({ users: json }) // Stateを更新する
     })
 }
 
@@ -80,7 +87,7 @@ calcDate(){
 }
 
 submitTask() {
-    this.calcDate();
+    // this.calcDate();
     fetch("http://localhost:3001/contents", {
         method: "POST",
         headers: {
@@ -88,14 +95,19 @@ submitTask() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            from: this.state.users[this.state.selectedValue1].id,
-            to: this.state.users[this.state.selectedValue2].id,
-            message: this.state.text,
+            // from: this.state.users[this.state.selectedValue1].id,
+            // to: this.state.users[this.state.selectedValue2].id,
+            // message: this.state.text,
+            // craped: 0,
+            // date: this.state.date
+            from: "たかし",
+            to: "珠子",
+            body: this.state.text,
             craped: 0,
-            date: this.state.date
+            date: "2020/01/23 13:53"
         })
     })
-    .then( this.fetchTasks )
+    .then( this.fetchContents )
   }
 
 
