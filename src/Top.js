@@ -81,6 +81,8 @@ calcDate(){
 	// 年月日時分秒の文字列の作成(YYYYMMDDHHMMSS)
     let str = `${year}/${month}/${date} ${hour}:${minute}`;
     this.setState({date: str});
+    console.log("1:"+str)
+    console.log("1:"+this.state.date)
 }
 
 submitTask() {
