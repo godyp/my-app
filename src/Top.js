@@ -20,6 +20,8 @@ constructor(){
         "get": 0
     }]
     }
+    this.submitTask = this.submitTask.bind(this)
+    this.fetchTasks = this.fetchTasks.bind(this)
 }
 
 componentWillMount(){
