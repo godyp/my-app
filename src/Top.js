@@ -95,16 +95,16 @@ submitTask() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            // from: this.state.users[this.state.selectedValue1].id,
-            // to: this.state.users[this.state.selectedValue2].id,
-            // message: this.state.text,
-            // craped: 0,
-            // date: this.state.date
-            from: "たかし",
-            to: "珠子",
-            body: this.state.text,
+            from: this.state.users[this.state.selectedValue1].id,
+            to: this.state.users[this.state.selectedValue2].id,
+            message: this.state.text,
             craped: 0,
-            date: "2020/01/23 13:53"
+            date: this.state.date
+            // from: "たかし",
+            // to: "珠子",
+            // body: this.state.text,
+            // craped: 0,
+            // date: "2020/01/23 13:53"
         })
     })
     .then( this.fetchContents )
