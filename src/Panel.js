@@ -29,27 +29,27 @@ class Panel extends Component {
     }
 
     render() {
-        this.state.contents.map( content => {
-            return (
-            <div className="contents-container">
-                <div className="direction">
-                    <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[content.from].image}`} alt="user"/>
-                    <img src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
-                    <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[content.to].image}`} alt="user"/>
-                </div>
-                <div class="message">
-                    <p>{content.message}</p>
-                </div>
-                <div class="crapAndDate">
-                    <div class="crapNum">
-                        <img src={`${process.env.PUBLIC_URL}/images/crap.png`} alt="crap"/>
-                        <span>{content.craped}</span>
+        return (
+            this.state.contents.map( content => {
+                <div className="contents-container">
+                    <div className="direction">
+                        <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[content.from].image}`} alt="user"/>
+                        <img src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
+                        <img src={`${process.env.PUBLIC_URL}/images/${this.state.users[content.to].image}`} alt="user"/>
                     </div>
-                    <div class="submit-time">{content.submitTime}</div>
+                    <div class="message">
+                        <p>{content.message}</p>
+                    </div>
+                    <div class="crapAndDate">
+                        <div class="crapNum">
+                            <img src={`${process.env.PUBLIC_URL}/images/crap.png`} alt="crap"/>
+                            <span>{content.craped}</span>
+                        </div>
+                        <div class="submit-time">{content.submitTime}</div>
+                    </div>
                 </div>
-            </div>
-            )
-        })
+            })
+        )
     }
 }
 
