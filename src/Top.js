@@ -23,7 +23,7 @@ constructor(){
         "get": 0
     }]
     }
-    this.submitTask = this.submitTask.bind(this)
+    this.submitUsers = this.submitUsers.bind(this)
     this.fetchUsers = this.fetchUsers.bind(this)
 }
 
@@ -36,13 +36,6 @@ fetchUsers(){
     .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
     .then( json => { // オブジェクトに変換したレスポンスを受け取り、
     this.setState({ users: json }) // Stateを更新する
-    })
-}
-fetchContents(){
-    fetch("http://localhost:3001/contents") // データを取得しに行く
-    .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
-    .then( json => { // オブジェクトに変換したレスポンスを受け取り、
-    // this.setState({ users: json }) // Stateを更新する
     })
 }
 
@@ -68,7 +61,7 @@ handleUserChange2(event){
     })
 }
 
-submitTask() {
+submitUsers() {
     let str = moment().format('YYYY-MM-DD HH:mm:ss')
     fetch("http://localhost:3001/contents", {
         method: "POST",
@@ -84,15 +77,13 @@ submitTask() {
             date: str
         })
     })
-    .then( this.fetchContents )
 }
-
 
 
 render() {
     let button;
     if (this.state.hasTextError){
-    button = <input className="btn" type="submit" value="投稿"  onClick={ ()=>{this.submitTask()} }/>;
+    button = <input className="btn" type="submit" value="投稿"  onClick={ ()=>{this.submitUsers()} }/>;
     }else{
     button = <div className="no-btn">投稿</div>;
     }
