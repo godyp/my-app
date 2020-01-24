@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class Panel extends Component {
     constructor() {
         super()
         this.submitTask = this.submitTask.bind(this)
