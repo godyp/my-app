@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Panel extends Component {
     constructor() {
         super()
-        this.submitTask = this.submitTask.bind(this)
+        // this.submitTask = this.submitTask.bind(this)
         this.fetchUsers = this.fetchUsers.bind(this)
     }
 
