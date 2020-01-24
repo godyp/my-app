@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 // import './App.css';
 
 class Top extends Component {
@@ -66,23 +67,13 @@ handleUserChange2(event){
 }
 
 calcDate(){
-	// 現在の日時
-	let d = new Date();
-	// 2桁のゼロ埋め
-	// let fillZero = function ( number ) {
-	// 	return (0 + number).slice(-2);
-	// }
-	// 年月日時分を取得
-	let year = d.getFullYear();	// 年
-	let month = (0 + d.getMonth() + 1).slice(-2); // 月
-	let date = (0 + d.getDate()).slice(-2); // 日
-	let hour = (0 + d.getHours()).slice(-2); // 時
-	let minute = (0 + d.getMinutes()).slice(-2); // 分
-	// 年月日時分秒の文字列の作成(YYYYMMDDHHMMSS)
-    let str = `${year}/${month}/${date} ${hour}:${minute}`;
-    this.setState({date: str});
-    console.log("1:"+str)
-    console.log("1:"+this.state.date)
+    let str = moment()
+    this.setState({date : str})
+    // let year = moment().year()
+    // let month = moment().month()
+    // let date = moment().date()
+    // let day = moment().day()
+    // let str = year + "/" + month + "/" + date + " " + day
 }
 
 submitTask() {
@@ -102,7 +93,7 @@ submitTask() {
         })
     })
     .then( this.fetchContents )
-  }
+}
 
 
 
