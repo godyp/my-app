@@ -69,15 +69,15 @@ calcDate(){
 	// 現在の日時
 	let d = new Date();
 	// 2桁のゼロ埋め
-	let fillZero = function ( number ) {
-		return (0 + number).slice(-2);
-	}
+	// let fillZero = function ( number ) {
+	// 	return (0 + number).slice(-2);
+	// }
 	// 年月日時分を取得
 	let year = d.getFullYear();	// 年
-	let month = fillZero(d.getMonth() + 1); // 月
-	let date = fillZero(d.getDate()); // 日
-	let hour = fillZero(d.getHours()); // 時
-	let minute = fillZero(d.getMinutes()); // 分
+	let month = (0 + d.getMonth() + 1).slice(-2); // 月
+	let date = (0 + d.getDate()).slice(-2); // 日
+	let hour = (0 + d.getHours()).slice(-2); // 時
+	let minute = (0 + d.getMinutes()).slice(-2); // 分
 	// 年月日時分秒の文字列の作成(YYYYMMDDHHMMSS)
     let str = `${year}/${month}/${date} ${hour}:${minute}`;
     this.setState({date: str});
