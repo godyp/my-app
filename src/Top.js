@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import moment from 'moment';
-// import './App.css';
+// import moment from 'moment';
+const moment = require('moment');
+require('moment-timezone');
+moment.tz.setDefault('Asia/Tokyo');
 
 class Top extends Component {
 constructor(){
@@ -66,19 +68,8 @@ handleUserChange2(event){
     })
 }
 
-calcDate(){
-    let str = moment()
-    this.setState({submitTime : str})
-    // let year = moment().year()
-    // let month = moment().month()
-    // let date = moment().date()
-    // let day = moment().day()
-    // let str = year + "/" + month + "/" + date + " " + day
-}
-
 submitTask() {
-    // this.calcDate();
-    let str = moment()
+    let str = moment().format('YYYY-MM-DD HH:mm:ss')
     fetch("http://localhost:3001/contents", {
         method: "POST",
         headers: {
