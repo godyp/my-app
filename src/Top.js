@@ -12,7 +12,7 @@ constructor(){
     selectedValue2: 0,
     crapPoint: 0,
     getPoint: 0,
-    date: "",
+    submitTime: "",
     users:[{
         "id": 0,
         "name": "unknown",
@@ -68,7 +68,7 @@ handleUserChange2(event){
 
 calcDate(){
     let str = moment()
-    this.setState({date : str})
+    this.setState({submitTime : str})
     // let year = moment().year()
     // let month = moment().month()
     // let date = moment().date()
@@ -77,7 +77,8 @@ calcDate(){
 }
 
 submitTask() {
-    this.calcDate();
+    // this.calcDate();
+    let str = moment()
     fetch("http://localhost:3001/contents", {
         method: "POST",
         headers: {
@@ -89,7 +90,7 @@ submitTask() {
             to: this.state.users[this.state.selectedValue2].id,
             message: this.state.text,
             craped: 0,
-            date: this.state.date
+            date: str
         })
     })
     .then( this.fetchContents )
