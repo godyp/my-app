@@ -109,7 +109,7 @@ render() {
                     >
                         {
                             this.state.users.map( user => {
-                                return <option className="user" value={ user.id }>{ user.name }</option>
+                                return <option className="user" value={ user.id } key={user.id}>{ user.name }</option>
                             })
                         }
                     </select>
