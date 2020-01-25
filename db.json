@@ -23,8 +23,8 @@
     "contents": [
       {
         "id": 0,
-        "from": "",
-        "to": "",
+        "from": 0,
+        "to": 0,
         "message": "",
         "craped": "",
         "submitTime": ""
