@@ -74,7 +74,7 @@ submitUsers() {
             to: this.state.users[this.state.selectedValue2].id,
             message: this.state.text,
             craped: 0,
-            date: str
+            submitTime: str
         })
     })
 }
