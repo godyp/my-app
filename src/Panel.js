@@ -1,6 +1,33 @@
 import React, { Component } from 'react';
 
 class Panel extends Component {
+    constructor() {
+        super()
+        this.fetchUsers = this.fetchUsers.bind(this)
+        this.fetchContents = this.fetchContents.bind(this)
+    }
+
+    componentWillMount(){
+        this.fetchUsers()
+        this.fetchContents()
+    }
+
+    fetchUsers(){
+        fetch("http://localhost:3001/users") // データを取得しに行く
+        .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
+        .then( json => { // オブジェクトに変換したレスポンスを受け取り、
+        this.setState({ users: json }) // Stateを更新する
+        })
+    }
+
+    fetchContents(){
+        fetch("http://localhost:3001/contents") // データを取得しに行く
+        .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
+        .then( json => { // オブジェクトに変換したレスポンスを受け取り、
+        this.setState({ contents: json }) // Stateを更新する
+        })
+    }
+
     render() {
         return(
             <div className="contents-container">
@@ -10,7 +37,7 @@ class Panel extends Component {
                     <img className="person-img" src={`${process.env.PUBLIC_URL}/images/woman01.png`} alt="user"/>
                 </div>
                 <div className="message">
-                    <span>お疲れ様</span>
+                    <span>{this.state.users}{this.state.contents}</span>
                 </div>
                 <div className="crapAndDate">
                     <div className="crapNum">
