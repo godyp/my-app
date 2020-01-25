@@ -3,6 +3,23 @@ import React, { Component } from 'react';
 class Panel extends Component {
     constructor() {
         super()
+        this.state = {
+            users:[{
+                "id": 0,
+                "name": "unknown",
+                "image": "unknown.png",
+                "give": 0,
+                "get": 0
+            }],
+            contents:[{
+                "id": 0,
+                "from": "0",
+                "to": "0",
+                "message": "---",
+                "craped": "0",
+                "submitTime": "---"
+            }]
+        }
         this.fetchUsers = this.fetchUsers.bind(this)
         this.fetchContents = this.fetchContents.bind(this)
     }
