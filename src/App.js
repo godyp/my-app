@@ -7,8 +7,6 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      from: 0,
-      to: 0,
       users:[{
           "id": 0,
           "name": "unknown",
@@ -56,14 +54,10 @@ fetchContents(){
         <Top />
 
         {this.state.contents.map((content)=>{
-          this.setState({
-            from: content.from,
-            to: content.to
-          })
           return (
             <Panel
-            fromUserImage={this.state.users[this.state.from].image}
-            toUserImage={this.state.users[this.state.to].image}
+            fromUserImage={this.state.users[content.from].image}
+            toUserImage={this.state.users[content.to].image}
             message={content.message}
             craped={content.craped}
             submitTime={content.submitTime}
