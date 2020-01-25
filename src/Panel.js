@@ -51,9 +51,9 @@ class Panel extends Component {
         return(
             <div className="contents-container">
                 <div className="direction">
-                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[from].image}`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[0].image}`} alt="user"/>
                     <img className="arrow-img" src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
-                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[to].image}`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[0].image}`} alt="user"/>
                 </div>
                 <div className="message">
                     <span>{this.state.contents[0].message}</span>
