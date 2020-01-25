@@ -54,11 +54,11 @@ class Panel extends Component {
                     <img className="person-img" src={`${process.env.PUBLIC_URL}/images/woman01.png`} alt="user"/>
                 </div>
                 <div className="message">
-                    <span>{this.state.users[0]}{this.state.contents[0]}</span>
+                    <span>{this.state.users[0].name}{this.state.contents[0].message}</span>
                 </div>
                 <div className="crapAndDate">
                     <div className="crapNum">
-                        <img class="crap-img" src={`${process.env.PUBLIC_URL}/images/crap.png`} alt="crap"/>
+                        <img className="crap-img" src={`${process.env.PUBLIC_URL}/images/crap.png`} alt="crap"/>
                         <span>10</span>
                     </div>
                     <div className="submit-time">
