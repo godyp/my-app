@@ -44,7 +44,7 @@ fetchContents(){
     fetch("http://localhost:3001/contents") // データを取得しに行く
     .then( response => response.json() ) // json型のレスポンスをオブジェクトに変換する
     .then( json => { // オブジェクトに変換したレスポンスを受け取り、
-    this.setState({ contents: json }) // Stateを更新する
+    this.setState({ contents: json.reverse() }) // Stateを更新する
     })
 }
 
