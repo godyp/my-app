@@ -49,20 +49,20 @@ class Panel extends Component {
         return(
             <div className="contents-container">
                 <div className="direction">
-                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/man01.png`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.contents[0].from].name}`} alt="user"/>
                     <img className="arrow-img" src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
-                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/woman01.png`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.contents[0].to].name}`} alt="user"/>
                 </div>
                 <div className="message">
-                    <span>{this.state.users[0].name}{this.state.contents[0].message}</span>
+                    <span>{this.state.contents[0].message}</span>
                 </div>
                 <div className="crapAndDate">
                     <div className="crapNum">
                         <img className="crap-img" src={`${process.env.PUBLIC_URL}/images/crap.png`} alt="crap"/>
-                        <span>10</span>
+                        <span>{this.state.contents[0].craped}</span>
                     </div>
                     <div className="submit-time">
-                        <span>2020/01/26 00:41</span>
+                        <span>{this.state.contents[0].submitTime}</span>
                     </div>
                 </div>
             </div>
