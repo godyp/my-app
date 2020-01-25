@@ -46,12 +46,14 @@ class Panel extends Component {
     }
 
     render() {
+        let from = this.state.contents[0].from;
+        let to   = this.state.contents[0].to;
         return(
             <div className="contents-container">
                 <div className="direction">
-                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.contents[0].from].name}`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[from].image}`} alt="user"/>
                     <img className="arrow-img" src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
-                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[this.state.contents[0].to].name}`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/${this.state.users[to].image}`} alt="user"/>
                 </div>
                 <div className="message">
                     <span>{this.state.contents[0].message}</span>
