@@ -4,8 +4,8 @@ class Panel extends Component {
     constructor() {
         super()
         this.state = {
-            from = 0,
-            to = 0,
+            from: 0,
+            to: 0,
             users:[{
                 "id": 0,
                 "name": "unknown",
