@@ -5,9 +5,9 @@ class Panel extends Component {
         return(
             <div className="contents-container">
                 <div className="direction">
-                    <img src={`${process.env.PUBLIC_URL}/images/man01.png}`} alt="user"/>
-                    <img src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
-                    <img src={`${process.env.PUBLIC_URL}/images/woman01.png`} alt="user"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/man01.png`} alt="user"/>
+                    <img className="arrow-img" src={`${process.env.PUBLIC_URL}/images/arrow.png`} alt="arrow"/>
+                    <img className="person-img" src={`${process.env.PUBLIC_URL}/images/woman01.png`} alt="user"/>
                 </div>
                 <div className="message">
                     <span>お疲れ様</span>
