@@ -62,11 +62,11 @@ fetchContents(){
           })
           return (
             <Panel
-            fromUserImage = {this.state.users[this.state.from].image}
-            toUserImage   = {this.state.users[this.state.to].image}
-            message       = {content.message}
-            craped        = {content.craped}
-            submitTime    = {content.submitTime}
+            fromUserImage={this.state.users[this.state.from].image}
+            toUserImage={this.state.users[this.state.to].image}
+            message={content.message}
+            craped={content.craped}
+            submitTime={content.submitTime}
             />
           )
         })}
